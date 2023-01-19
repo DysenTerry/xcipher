@@ -1,4 +1,4 @@
-/*  Author		TA Lucas
+/*  Author		T Allen Lucas
     Purpose		to password encrypt any file
     Program		Encrypt.java
 */
