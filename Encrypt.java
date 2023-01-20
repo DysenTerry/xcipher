@@ -18,7 +18,6 @@ import javax.swing.JFormattedTextField;
 public class Encrypt extends JPanel {
    private JLabel label, space1, space2, space3;
    private JLabel seedLbl;
-   private JTextField seed;
    private JProgressBar pb;
    private JButton button;
    private JFileChooser fc;
@@ -51,14 +50,13 @@ public class Encrypt extends JPanel {
       space3 = new JLabel("                                                                               ");
       seedLbl = new JLabel("Seed");
 
-      seed = new JTextField(6);
-      mySeed = new JFormattedTextField(new Integer(5));
+      //seed = new JTextField(6);
+      mySeed = new JFormattedTextField(Integer.valueOf(5));
       mySeed.setColumns(6);
 
 
 
       view = new JCheckBox();
-
 	  textArea = new JTextArea("", 8, 38);
       textArea.setFont(new Font("Serif", Font.ITALIC, 16));
       textArea.setLineWrap(true);
@@ -114,9 +112,6 @@ class EncryptThread extends Thread {
    }
 
    public void run() {
-      String str = "";
-      String filePre = "";
-      String filePost = "";
       int seedValue = Integer.parseInt(mySeed.getText().replaceAll(",", ""));
 
       generator = new Random(seedValue);
@@ -129,10 +124,6 @@ class EncryptThread extends Thread {
 
       textArea.setText("");
       textArea.append("File opened: " + inFile.getName() + "\n");
-
-
-
-
 
          try {
          	//Opens files in binary format
@@ -148,10 +139,6 @@ class EncryptThread extends Thread {
 		    String passWord = "";
 		    String newFile ="";
 		    int passWordLength = 0;
-		    String EncryptedFilePath = "";
- 		    int originalByte = 0;
-		    int encryptedByte = 0;
-		    //int mask = 0;
 		    int counter = 0;
 		    int pbBarValue = 0;
 		    long fileLen = 0;
