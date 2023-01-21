@@ -4,6 +4,6 @@ if you seed the number generator. The program will read the file and compare eac
 output of the xor comparison will be stored in the encrypted file byte by byte. The trick is when you "xor" a byte from the file with the mask, which is
 also a byte, it will create an encrypted byte. If you "xor" that encrypted byte with the same mask it will generate the original byte.
 
-The program does encrypt and decrypt like designed, but I have planned changes that will make it more secure.
+The program does encrypt and decrypt like designed, but it does have a flaw. I wont list it here, but message me if you identify the flaw. I have planned changes that will correct this and make it more secure.
 
 ![Xcipher](https://github.com/TAllenLucas/xcipher/blob/Master/screenshot.JPG?raw=true)
